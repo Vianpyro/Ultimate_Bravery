@@ -7,11 +7,33 @@ main>* {
     flex: 1;
 }
 
+.unselected {
+    filter: grayscale(100%);
+    background: var(--background-color-secondary);
+}
+
 #champion-selection {
     display: flex;
     flex-direction: column;
     gap: var(--gap-secondary);
     height: 100%;
+}
+
+#champion-selection-options {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#champion-selection-gross,
+#search-bar {
+    border: 1px solid var(--highlight-color);
+    border-radius: var(--boarder-radius);
+}
+
+#champion-selection-gross {
+    background-color: var(--background-color-secondary);
+    padding: 0.5em 0;
 }
 
 #champions-container {
@@ -24,18 +46,27 @@ main>* {
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
-    gap: var(--gap-tetriary);
 }
 
 #champions-list>div>img {
     border-radius: var(--border-radius);
+    cursor: pointer;
     height: 3rem;
     width: 3rem;
 }
 
-.unselected {
-    filter: grayscale(100%);
-    background: var(--background-color-secondary);
+#current-patch {
+    color: var(--highlight-color);
+}
+
+#generate-build {
+    align-self: center;
+    background-color: var(--background-color-secondary);
+    border: 1px solid var(--highlight-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    padding: 0.5em 0;
+    width: 50%;
 }
 
 #search-bar {
@@ -43,8 +74,6 @@ main>* {
     background-image: url("../images/search.svg");
     background-repeat: no-repeat;
     background-size: contain;
-    border: 1px solid var(--highlight-color);
-    border-radius: var(--boarder-radius);
     padding: 0.5em 0 0.5em 2.5em;
     display: flex;
     justify-content: center;

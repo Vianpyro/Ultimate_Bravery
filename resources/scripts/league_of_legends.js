@@ -1,4 +1,6 @@
+const championsGrossSelector = document.getElementById('champion-selection-gross');
 const championsList = document.getElementById("champions-list");
+const gamePatch = document.getElementById('current-patch');
 const searchBar = document.getElementById('search-bar');
 
 function makeToggleable(element) {
@@ -8,6 +10,7 @@ function makeToggleable(element) {
         if (isCooldown) return;
 
         element.classList.toggle('unselected');
+        championsGrossSelector.value = "selection-champions-custom";
         isCooldown = true;
 
         setTimeout(() => {
@@ -18,7 +21,7 @@ function makeToggleable(element) {
 
 (async () => {
     const gameVersion = await getGameVersion();
-    championsList.innerText = `Loading champions for patch ${gameVersion}...`;
+    gamePatch.innerText = gameVersion;
 
     const gameLanguages = await getGameLanguages();
 
@@ -49,5 +52,16 @@ searchBar.addEventListener('input', () => {
     champions.forEach(champion => {
         const altText = champion.querySelector('img').alt.toLowerCase();
         champion.style.display = altText.includes(query) ? 'block' : 'none';
+    });
+});
+
+championsGrossSelector.addEventListener('change', (event) => {
+    const selectedValue = event.target.value;
+
+    if (selectedValue === "selection-champions-custom") return;
+
+    const champions = championsList.querySelectorAll('div');
+    champions.forEach(champion => {
+        champion.classList.toggle('unselected', selectedValue === "selection-champions-none");
     });
 });

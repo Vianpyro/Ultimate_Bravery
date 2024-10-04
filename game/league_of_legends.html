@@ -15,16 +15,32 @@
         <h2 id="game">League of Legends</h2>
     </header>
 
+    <button id="generate-build">Generate build</button>
+
     <main>
         <section id="champion-selection">
-            <input type="text" id="search-bar" placeholder="Search for a champion...">
+            <nav id="champion-selection-options">
+                <input type="text" id="search-bar" placeholder="Search for a champion...">
+                <select name="gross-selection" id="champion-selection-gross">
+                    <option value="selection-champions-custom">Custom</option>
+                    <option value="selection-champions-all">Select all</option>
+                    <option value="selection-champions-none">Select none</option>
+                </select>
+            </nav>
 
+            <div>Patch: <span id="current-patch"></span></div>
             <div id="champions-container">
                 <div id="champions-list"></div>
             </div>
         </section>
-        <section id="runes-selection"></section>
-        <section id="items-selection"></section>
+        <section id="result">
+            <h3 id="result-champion">Champion</h3>
+            <h4 id="result-role">Role</h4>
+            <h4 id="result-spells">Spells</h4>
+            <h4 id="result-items">Items</h4>
+            <h4 id="result-runes">Runes</h4>
+        </section>
+        <section id="settings-and-rules"></section>
     </main>
 
     <footer>
