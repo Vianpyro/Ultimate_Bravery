@@ -1,6 +1,9 @@
 :root {
     --border-radius: 15px;
     --highlight-color: #888;
+    --gap-primary: 2rem;
+    --gap-secondary: 1rem;
+    --gap-tertiary: .5rem;
 
     /* Theme related */
     --background-color-primary: #eee;
@@ -31,7 +34,7 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: var(--gap-primary);
 }
 
 footer,
@@ -41,7 +44,7 @@ header {
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    gap: .5rem;
+    gap: var(--gap-tertiary);
 }
 
 main {

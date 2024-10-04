@@ -1,32 +1,30 @@
 main {
     flex: 1;
+    overflow-y: auto;
 }
 
 main>* {
     flex: 1;
-    gap: 2rem;
 }
 
-#champions-container {
+#champion-selection {
+    display: flex;
     flex-direction: column;
-    overflow-x: hidden;
+    gap: var(--gap-secondary);
     height: 100%;
 }
 
-#champion-list {
-    overflow-x: auto;
-    max-height: 300px;
-    height: auto;
+#champions-container {
+    flex-grow: 1;
+    overflow-y: auto;
 }
 
-#champions-list,
-#champion-selection {
+#champions-list {
     align-items: center;
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: .5rem;
-    height: 80svh;
+    gap: var(--gap-tetriary);
 }
 
 #champions-list>div>img {
