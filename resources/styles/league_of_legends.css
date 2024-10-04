@@ -33,6 +33,11 @@ main>* {
     width: 3rem;
 }
 
+.unselected {
+    filter: grayscale(100%);
+    background: var(--background-color-secondary);
+}
+
 #search-bar {
     background-color: var(--background-color-secondary);
     background-image: url("../images/search.svg");

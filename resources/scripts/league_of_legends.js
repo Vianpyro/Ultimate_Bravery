@@ -1,6 +1,21 @@
 const championsList = document.getElementById("champions-list");
 const searchBar = document.getElementById('search-bar');
 
+function makeToggleable(element) {
+    let isCooldown = false;
+
+    element.addEventListener('click', () => {
+        if (isCooldown) return;
+
+        element.classList.toggle('unselected');
+        isCooldown = true;
+
+        setTimeout(() => {
+            isCooldown = false;
+        }, 500);
+    });
+}
+
 (async () => {
     const gameVersion = await getGameVersion();
     championsList.innerText = `Loading champions for patch ${gameVersion}...`;
@@ -22,6 +37,8 @@ const searchBar = document.getElementById('search-bar');
 
         championDiv.appendChild(championImage);
         championsList.appendChild(championDiv);
+
+        makeToggleable(championDiv);
     });
 })();
 
