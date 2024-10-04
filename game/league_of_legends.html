@@ -34,13 +34,25 @@
             </div>
         </section>
         <section id="result">
-            <h3 id="result-champion">Champion</h3>
-            <h4 id="result-role">Role</h4>
+            <div id="result-champion">
+                <img id="result-champion-image">
+                <h1 id="result-champion-name"></h1>
+            </div>
+            <div id="result-role">
+                <img id="result-role-image">
+                <h2 id="result-role-name"></h2>
+            </div>
             <h4 id="result-spells">Spells</h4>
             <h4 id="result-items">Items</h4>
             <h4 id="result-runes">Runes</h4>
         </section>
-        <section id="settings-and-rules"></section>
+        <section id="settings-and-rules">
+            <div id="settings">
+                <label for="difficulty-slider">Difficulty:</label>
+                <input type="range" id="difficulty-slider" min="1" max="10" value="1">
+            </div>
+            <div id="rules"></div>
+        </section>
     </main>
 
     <footer>
